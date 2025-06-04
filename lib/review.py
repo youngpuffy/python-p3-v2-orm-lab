@@ -1,4 +1,5 @@
 from __init__ import CURSOR, CONN
+from department import Department
 from employee import Employee
 
 
@@ -107,8 +108,6 @@ class Review:
         if not row:
             return None
         review_id =row [0]
-        if review_id in cls.all:
-            return cls.all[review_id]
         review = cls(row[1], row[2], row[3], id=review_id)
         cls.all[review_id] = review
         return review
